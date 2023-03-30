@@ -37,6 +37,7 @@ class socket {
           onlineUsers[workspaceId]?.find((data) => data.userId === userId) !==
           undefined
         ) {
+          console.log('')
         } else if (onlineUsers[workspaceId]) {
           onlineUsers[workspaceId] = [
             ...onlineUsers[workspaceId],

@@ -78,7 +78,8 @@ export const createWorkspace = catchAsync(async (req, res, next) => {
       $push: { memberOf: { workspace: workspace._id }, role: 'owner' },
     }),
   ])
-  response(res, 200, { workspaceDB })
+  console.log(workspaceDB)
+  response(res, 200, { id: workspaceDB._id })
 })
 
 /**

@@ -116,12 +116,9 @@ export const allTasks = catchAsync(async (req, res, next) => {
  * @param {Object} req - the req params contain the task id
  */
 export const getOneTask = catchAsync(async (req, res, next) => {
-  const id = req.params.id
-  const task = await getTask(id)
-  res.status(200).json({
-    status: 'success',
-    task,
-  })
+  const { taskid } = req.params
+  const task = await getTask(taskid)
+  response(res, 200, { task })
 })
 
 /**

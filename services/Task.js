@@ -40,9 +40,7 @@ export const taskAggregateWith4PipeLine = async ({
  * @returns {Object} - task data
  */
 export const getTask = async (id) => {
-  const data = await getOrSetFunction(`task-${id}`, () => {
-    return Task.findById(id).lean()
-  })
+  const data = await Task.findById(id).lean()
   return data
 }
 

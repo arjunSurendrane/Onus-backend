@@ -1,7 +1,5 @@
 import S3 from 'aws-sdk/clients/s3.js'
 import fs from 'fs'
-import util from 'util'
-const unlinkFile = util.promisify(fs.unlink)
 
 /**
  * Set AWS S3 credentials
@@ -34,8 +32,8 @@ export const uploadFile = async (file) => {
     Body: fileStream,
     Key: file.filename,
   }
-  await unlinkFile(file.path)
-  return s3.upload(uploadParams).promise()
+  const uploadFile = s3.upload(uploadParams).promise()
+  return uploadFile
 }
 
 /**

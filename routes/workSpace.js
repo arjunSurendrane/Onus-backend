@@ -72,7 +72,7 @@ router.get('/:id/members/:userId/workload', membersWorkload)
 router.get('/:id/workload', workspaceWorkload)
 router.get('/:id', getWorkspaceWithId)
 router.get('/tasks/:id/list', groupAllTaks)
-router.get('/task/:id', getOneTask)
+router.get('/task/:taskid', getOneTask)
 router.get('/projects/:id', projects)
 
 export default router
