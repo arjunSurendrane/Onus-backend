@@ -7,6 +7,7 @@ const connectToDB = () => {
   // connected to database
   mongoose.set('strictQuery', true)
   const db = process.env.MONGODB_KEY.replace('<password>', process.env.PASSWORD)
+  // const db = 'mongodb://localhost:27017/workload-management-system'
   mongoose
     .connect(db)
     .then((res) => {
